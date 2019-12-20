@@ -26,3 +26,11 @@ systemctl enable sniproxy dnsmasq nginx
 please read the `v2ray.json` file.
 
 modify the `121` line with your sniproxy server ip address
+
+then run this command:
+
+```
+sed  "1i\nameserver sniproxyip" /etc/resolv.conf
+```
+
+enjoy it.
