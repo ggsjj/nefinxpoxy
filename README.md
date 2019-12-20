@@ -22,6 +22,7 @@ systemctl enable sniproxy dnsmasq nginx
 ```
 
 # v2ray setting
-```
 
-```
+please read the `v2ray.json` file.
+
+modify the `121` line with your sniproxy server ip address
