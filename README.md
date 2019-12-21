@@ -34,3 +34,19 @@ sed  "1i\nameserver sniproxyip" /etc/resolv.conf
 ```
 
 enjoy it.
+
+
+debian  的测试源
+
+添加源，编辑sources.list文件，vi /etc/apt/sources.list，添加以下内容
+
+```
+deb http://httpredir.debian.org/debian buster main
+```
+
+安装sniproxy，首先要检查更新，然后再安装
+
+```
+apt update
+apt install sniproxy
+```
