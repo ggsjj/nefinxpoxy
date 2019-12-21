@@ -50,3 +50,38 @@ deb http://httpredir.debian.org/debian buster main
 apt update
 apt install sniproxy
 ```
+
+编译安装
+这里还可以编译安装。
+```
+sudo apt-get install autotools-dev cdbs debhelper dh-autoreconf dpkg-dev gettext libev-dev libpcre3-dev libudns-dev pkg-config fakeroot devscripts git -y
+```
+
+```
+git clone https://github.com/dlundquist/sniproxy
+cd sniproxy
+./autogen.sh
+./configure
+make
+make install
+```
+touch /etc/sniproxy.conf
+mkdir log
+
+设置开机启动脚本，vi /etc/systemd/system/sniproxy.service
+
+```
+[Unit]
+Description=sniproxy servier
+After=network.target
+     
+[Service]
+ExecStart=/usr/local/sbin/sniproxy -c /etc/sniproxy.conf -f
+Restart=always
+    
+[Install]
+WantedBy=multi-user.target
+设置开机启动
+
+systemctl enable sniproxy
+```
