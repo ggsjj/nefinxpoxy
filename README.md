@@ -4,6 +4,8 @@ this code testing on ubuntu 18.04.* is ok.
 
 ```
 apt-get install sniproxy dnsmasq -y
+
+git clone https://github.com/ggsjj/nefinxpoxy
 cp dnsmasq.conf /etc/dnsmasq.conf
 cp sniproxy.conf /etc/sniproxy.conf
 
@@ -60,13 +62,13 @@ sudo apt-get install autotools-dev cdbs debhelper dh-autoreconf dpkg-dev gettext
 ```
 git clone https://github.com/dlundquist/sniproxy
 cd sniproxy
-./autogen.sh
-./configure
-make
-make install
+ ./autogen.sh && dpkg-buildpackage
+
+sudo dpkg -i ../sniproxy_*.deb
+
+sudo dpkg -i ../sniproxy_<版本>_<构造>.deb
 ```
-touch /etc/sniproxy.conf
-mkdir log
+
 
 设置开机启动脚本，vi /etc/systemd/system/sniproxy.service
 
