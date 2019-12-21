@@ -70,6 +70,30 @@ sudo dpkg -i ../sniproxy_<版本>_<构造>.deb
 ```
 
 
+cnetos7 安装
+
+更新源
+
+①安装epel源
+
+wget -O /etc/yum.repos.d/epel.repo http://mirrors.aliyun.com/repo/epel-6.repo
+②安装依赖软件
+```
+yum install autoconf automake curl gettext-devel libev-devel pcre-devel perl pkgconfig rpm-build udns-devel gcc-c++ cc -y
+
+./autogen.sh && ./configure && make dist
+
+ ./autogen.sh && ./configure && make dist
+
+ rpmbuild --define "_sourcedir `pwd`" -ba redhat/sniproxy.spec
+
+安装/root/rpmbuild/RPMS/x86_64/sniproxy-0.6.0+git.8.g3fa47ea-1.el7.x86_64.rpm中间
+
+ sudo yum install ../sniproxy-<version>.<arch>.rpm
+
+```
+
+
 设置开机启动脚本，vi /etc/systemd/system/sniproxy.service
 
 ```
