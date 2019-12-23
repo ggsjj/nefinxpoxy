@@ -3,7 +3,7 @@
 this code testing on ubuntu 18.04.* is ok.
 
 ```
-apt-get installsniproxy-y
+apt-get install sniproxy-y
 apt-get install dnsmasq -y
 git clone https://github.com/ggsjj/nefinxpoxy
 cd nefinxpoxy
