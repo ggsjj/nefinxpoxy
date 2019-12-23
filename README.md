@@ -3,9 +3,10 @@
 this code testing on ubuntu 18.04.* is ok.
 
 ```
-apt-get install sniproxy dnsmasq -y
-
+apt-get installsniproxy-y
+apt-get install dnsmasq -y
 git clone https://github.com/ggsjj/nefinxpoxy
+cd nefinxpoxy
 cp dnsmasq.conf /etc/dnsmasq.conf
 cp sniproxy.conf /etc/sniproxy.conf
 
@@ -16,6 +17,7 @@ deb-src http://nginx.org/packages/$(. /etc/os-release; echo "$ID")/ $(lsb_releas
 EOF
 apt-get update
 apt-get install nginx -y
+
 # change nginx configure file `92` line for your server ip
 cp nginx.conf /etc/nginx/nginx.conf
 
@@ -75,8 +77,9 @@ cnetos7 安装
 更新源
 
 ①安装epel源
-
+```
 wget -O /etc/yum.repos.d/epel.repo http://mirrors.aliyun.com/repo/epel-6.repo
+```
 ②安装依赖软件
 ```
 yum install autoconf automake curl gettext-devel libev-devel pcre-devel perl pkgconfig rpm-build udns-devel gcc-c++ cc -y
