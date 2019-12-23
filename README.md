@@ -1,5 +1,7 @@
 # netflix sniproxy
 
+[Netflix](https://raw.githubusercontent.com/ggsjj/nefinxpoxy/rm/1.md)
+
 this code testing on ubuntu 18.04.* is ok.
 
 ```
